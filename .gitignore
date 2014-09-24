@@ -1,0 +1,10 @@
+*.pyc
+_theano
+*.zip
+*.dmp
+*.exe
+todo.c
+upload
+kinect2.py
+kinect_eval.py
+old

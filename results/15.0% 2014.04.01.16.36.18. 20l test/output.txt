@@ -1,0 +1,81 @@
+use:
+  load: False
+  trajconv: False
+  fast_conv: True
+  aug: True
+  drop: True
+  mom: True
+  traj: False
+  depth: True
+  valid2: False
+  norm_div: False
+  norm: True
+lr:
+  decay: 0.95
+  decay_each_epoch: True
+  init: 0.003
+  decay_big: 0.1
+  decay_if_plateau: True
+batch:
+  mini: 20
+  micro: 4
+net:
+  kernels: [(1, 7, 7), (1, 8, 8), (1, 6, 6)]
+  shared_convnets: []
+  b_scale: 0.1
+  stride: [1, 1, 1]
+  hidden_vid: 300
+  n_class: 20
+  norm_method: lcn
+  shared_stages: []
+  pool_method: max
+  maps: [2, 16, 32, 64]
+  hidden_traj: 200
+  W_scale: [[0.01, 0.01], [0.01, 0.01], [0.01, 0.01], 0.01, 0.01]
+  fusion: early
+  pools: [(2, 2, 2), (2, 2, 2), (2, 2, 2)]
+  hidden: 500
+  n_convnets: 2
+reg:
+  L1_vid: 0.0
+  L1_traj: 0.0
+  L2_vid: 0.0
+  L2_traj: 0.0
+drop:
+  p_hidden_val: 0.5
+  p_traj_val: 0.5
+  p_vid_val: 0.5
+mom:
+  nag: True
+  momentum: 0.9
+tr:
+  patience: 1
+  n_epochs: 1000
+data: total: 6600 train: 4600 valid: 2000 test: 0
+
+Training: 65.61ms / sample
+
+ 
+    epoch 0: 6.18 m since start, LR 3.00e-03
+    train_cost: 2.534, train_err: 78.804
+    val_cost: 0.902, val_err: 28.050, best: inf
+ 
+    epoch 1: 12.77 m since start, LR 2.85e-03
+    train_cost: 1.167, train_err: 37.065
+    val_cost: 0.586, val_err: 19.000, best: inf
+ 
+    epoch 2: 19.46 m since start, LR 2.71e-03
+    train_cost: 0.866, train_err: 27.087
+    val_cost: 0.547, val_err: 17.700, best: inf
+ 
+    epoch 3: 26.24 m since start, LR 2.57e-03
+    train_cost: 0.710, train_err: 21.717
+    val_cost: 0.504, val_err: 16.350, best: 16.350
+ 
+    epoch 4: 32.92 m since start, LR 2.44e-03
+    train_cost: 0.606, train_err: 18.500
+    val_cost: 0.450, val_err: 15.050, best: 15.050
+ 
+    epoch 5: 39.57 m since start, LR 2.32e-03
+    train_cost: 0.537, train_err: 16.348
+    val_cost: 0.555, val_err: 17.600, best: 15.050

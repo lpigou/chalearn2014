@@ -1,0 +1,50 @@
+use:
+  load: False
+  trajconv: False
+  drop: True
+  lr_decay: True
+  conv_flat: False
+  micro: True
+  depth: True
+  hist: False
+  rect: False
+  mom: True
+  reg: False
+  norm: True
+lr:
+  max_n_decays: 100
+  init: 0.001
+  decay: 0.95
+batch:
+  mini: 20
+  micro: 1
+net:
+  kernels: [(1, 7, 7), (1, 7, 7), (3, 6, 6)]
+  norm_method: lcn
+  pool_method: max
+  maps: [2, 5, 25, 25]
+  pools: [(2, 3, 3), (2, 2, 2), (2, 2, 2)]
+  hidden: 500
+reg:
+  L2: 0.0
+  L1: 0.0
+drop:
+  p_val2: 0.5
+  conv: False
+  mlp: True
+  p_val: 0.5
+mom:
+  nag: True
+  shock: 5
+  final: 0.9
+  init: 0.9
+tr:
+  patience: 1
+  n_epochs: 100
+
+Training: 211.19ms / sample
+
+ 
+    Epoch 0: 20.10 m since start, LR 1.00e-03
+    training_cost: 2.833, training_error: 94.585
+    Validation_cost: 2.805, validation_error: 93.667

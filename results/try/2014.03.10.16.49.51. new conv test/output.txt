@@ -1,0 +1,49 @@
+use:
+  load: False
+  trajconv: False
+  mom: True
+  aug: False
+  drop: True
+  traj: False
+  depth: True
+  valid2: False
+  norm: True
+lr:
+  decay_each_epoch: True
+  init: 0.001
+  decay: 0.95
+batch:
+  mini: 20
+  micro: 1
+net:
+  kernels: [(1, 7, 7), (1, 7, 7), (3, 6, 6)]
+  shared_convnets: []
+  hidden_vid: 300
+  norm_method: lcn
+  shared_stages: []
+  pool_method: max
+  maps: [2, 16, 32, 32]
+  fusion: early
+  hidden_traj: 200
+  pools: [(2, 3, 3), (2, 2, 2), (2, 2, 2)]
+  hidden: 500
+  n_convnets: 1
+reg:
+  L1_vid: 0.0
+  L1_traj: 0.0
+  L2_vid: 0.0
+  L2_traj: 0.0
+drop:
+  p_hidden_val: 0.5
+  p_traj_val: 0.5
+  p_vid_val: 0.5
+mom:
+  nag: True
+  momentum: 0.9
+tr:
+  patience: 1
+  n_epochs: 100
+data: total: 6600 train: 5300 valid: 1300 test: 0
+
+Training: 400.56ms / sample
+

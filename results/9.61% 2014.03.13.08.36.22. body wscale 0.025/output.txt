@@ -1,0 +1,175 @@
+use:
+  load: False
+  trajconv: False
+  fast_conv: False
+  aug: False
+  drop: True
+  mom: True
+  traj: False
+  depth: True
+  valid2: False
+  norm_div: False
+  norm: True
+lr:
+  decay: 0.95
+  decay_each_epoch: True
+  init: 0.001
+  decay_big: 0.1
+  decay_if_plateau: True
+batch:
+  mini: 20
+  micro: 5
+net:
+  kernels: [(1, 7, 7), (1, 7, 7), (3, 6, 6)]
+  shared_convnets: []
+  b_scale: 0.1
+  hidden_vid: 300
+  norm_method: lcn
+  shared_stages: []
+  pool_method: max
+  maps: [2, 5, 25, 25]
+  hidden_traj: 200
+  W_scale: 0.025
+  fusion: early
+  pools: [(2, 3, 3), (2, 2, 2), (2, 2, 2)]
+  hidden: 500
+  n_convnets: 1
+reg:
+  L1_vid: 0.0
+  L1_traj: 0.0
+  L2_vid: 0.0
+  L2_traj: 0.0
+drop:
+  p_hidden_val: 0.5
+  p_traj_val: 0.5
+  p_vid_val: 0.5
+mom:
+  nag: True
+  momentum: 0.9
+tr:
+  patience: 1
+  n_epochs: 1000
+data: total: 6600 train: 5300 valid: 1300 test: 0
+
+Training: 91.73ms / sample
+
+ 
+    epoch 0: 8.73 m since start, LR 1.00e-03
+    training_cost: 2.842, training_error: 87.755
+    validation_cost: 2.108, validation_error: 55.231
+ 
+    epoch 1: 17.43 m since start, LR 9.50e-04
+    training_cost: 2.030, training_error: 61.057
+    validation_cost: 1.343, validation_error: 36.769
+ 
+    epoch 2: 26.11 m since start, LR 9.03e-04
+    training_cost: 1.548, training_error: 46.698
+    validation_cost: 1.040, validation_error: 29.154
+ 
+    epoch 3: 34.82 m since start, LR 8.57e-04
+    training_cost: 1.256, training_error: 38.887
+    validation_cost: 0.854, validation_error: 25.385
+ 
+    epoch 4: 43.50 m since start, LR 8.15e-04
+    training_cost: 1.130, training_error: 35.151
+    validation_cost: 0.763, validation_error: 21.462
+ 
+    epoch 5: 52.21 m since start, LR 7.74e-04
+    training_cost: 1.012, training_error: 31.528
+    validation_cost: 0.697, validation_error: 20.462
+ 
+    epoch 6: 60.89 m since start, LR 7.35e-04
+    training_cost: 0.930, training_error: 28.472
+    validation_cost: 0.644, validation_error: 18.923
+ 
+    epoch 7: 69.65 m since start, LR 6.98e-04
+    training_cost: 0.864, training_error: 26.830
+    validation_cost: 0.676, validation_error: 19.615
+ 
+    epoch 8: 78.33 m since start, LR 6.63e-04
+    training_cost: 0.803, training_error: 25.434
+    validation_cost: 0.546, validation_error: 15.615
+ 
+    epoch 9: 87.03 m since start, LR 6.30e-04
+    training_cost: 0.711, training_error: 22.113
+    validation_cost: 0.523, validation_error: 15.231
+ 
+    epoch 10: 95.74 m since start, LR 5.99e-04
+    training_cost: 0.689, training_error: 22.075
+    validation_cost: 0.487, validation_error: 14.692
+ 
+    epoch 11: 104.40 m since start, LR 5.69e-04
+    training_cost: 0.669, training_error: 21.679
+    validation_cost: 0.478, validation_error: 13.385
+ 
+    epoch 12: 113.10 m since start, LR 5.40e-04
+    training_cost: 0.604, training_error: 19.698
+    validation_cost: 0.462, validation_error: 13.462
+ 
+    epoch 13: 121.79 m since start, LR 5.13e-04
+    training_cost: 0.568, training_error: 18.528
+    validation_cost: 0.439, validation_error: 11.846
+ 
+    epoch 14: 130.50 m since start, LR 4.88e-04
+    training_cost: 0.558, training_error: 18.358
+    validation_cost: 0.426, validation_error: 12.231
+ 
+    epoch 15: 139.18 m since start, LR 4.63e-04
+    training_cost: 0.500, training_error: 16.019
+    validation_cost: 0.435, validation_error: 13.000
+ 
+    epoch 16: 147.89 m since start, LR 4.40e-04
+    training_cost: 0.501, training_error: 16.264
+    validation_cost: 0.420, validation_error: 11.615
+ 
+    epoch 17: 156.54 m since start, LR 4.18e-04
+    training_cost: 0.472, training_error: 15.038
+    validation_cost: 0.462, validation_error: 12.692
+ 
+    epoch 18: 165.28 m since start, LR 3.97e-04
+    training_cost: 0.456, training_error: 14.717
+    validation_cost: 0.406, validation_error: 11.462
+ 
+    epoch 19: 173.96 m since start, LR 3.77e-04
+    training_cost: 0.419, training_error: 14.151
+    validation_cost: 0.385, validation_error: 11.077
+ 
+    epoch 20: 182.64 m since start, LR 3.58e-04
+    training_cost: 0.403, training_error: 13.302
+    validation_cost: 0.391, validation_error: 10.692
+ 
+    epoch 21: 191.31 m since start, LR 3.41e-04
+    training_cost: 0.392, training_error: 12.736
+    validation_cost: 0.382, validation_error: 10.769
+ 
+    epoch 22: 200.00 m since start, LR 3.24e-04
+    training_cost: 0.360, training_error: 11.679
+    validation_cost: 0.381, validation_error: 10.769
+ 
+    epoch 23: 208.69 m since start, LR 3.07e-04
+    training_cost: 0.348, training_error: 11.547
+    validation_cost: 0.394, validation_error: 11.308
+ 
+    epoch 24: 217.35 m since start, LR 2.92e-04
+    training_cost: 0.346, training_error: 11.226
+    validation_cost: 0.379, validation_error: 10.692
+ 
+    epoch 25: 226.06 m since start, LR 2.77e-04
+    training_cost: 0.318, training_error: 10.189
+    validation_cost: 0.376, validation_error: 10.154
+ 
+    epoch 26: 234.72 m since start, LR 2.64e-04
+    training_cost: 0.301, training_error: 9.755
+    validation_cost: 0.375, validation_error: 10.538
+ 
+    epoch 27: 243.46 m since start, LR 2.50e-04
+    training_cost: 0.308, training_error: 9.660
+    validation_cost: 0.354, validation_error: 9.615
+ 
+    epoch 28: 252.15 m since start, LR 2.38e-04
+    training_cost: 0.299, training_error: 9.755
+    validation_cost: 0.365, validation_error: 10.308
+ 
+    epoch 29: 260.86 m since start, LR 2.26e-04
+    training_cost: 0.283, training_error: 9.434
+    validation_cost: 0.382, validation_error: 10.000

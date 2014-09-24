@@ -1,0 +1,127 @@
+use:
+  load: True
+  trajconv: False
+  fast_conv: True
+  aug: True
+  maxout: False
+  drop: True
+  mom: True
+  traj: False
+  depth: True
+  valid2: False
+  norm_div: True
+  norm: False
+lr:
+  decay: 0.95
+  decay_each_epoch: True
+  init: 0.00132038000596
+  decay_big: 0.1
+  decay_if_plateau: True
+batch:
+  mini: 20
+  micro: 1
+net:
+  kernels: [(1, 5, 5), (1, 5, 5), (1, 4, 4)]
+  shared_convnets: []
+  scaler: [[1, 1], [1, 1], [1, 1], 1, 1]
+  b_scale: [[0.2, 0.2], [0.2, 0.2], [0.2, 0.2], 0.1, 0.1]
+  stride: [1, 1, 1]
+  hidden_vid: 1024
+  n_class: 21
+  norm_method: lcn
+  shared_stages: []
+  pool_method: max
+  maps: [2, 16, 32, 48]
+  hidden_traj: 64
+  W_scale: [[0.04, 0.04], [0.04, 0.04], [0.04, 0.04], 0.01, 0.01]
+  fusion: early
+  pools: [(2, 2, 2), (2, 2, 2), (2, 2, 2)]
+  hidden: 512
+  n_convnets: 2
+reg:
+  L1_vid: 0.0
+  L1_traj: 0.0
+  L2_vid: 0.0
+  L2_traj: 0.0
+drop:
+  p_hidden_val: 0.5
+  p_traj_val: 0.5
+  p_vid_val: 0.5
+mom:
+  nag: True
+  momentum: 0.9
+tr:
+  patience: 1
+  n_epochs: 1000
+data: total: 10700 train: 9600 valid: 1100 test: 0
+
+Training: 73.15ms / sample
+
+ 
+    epoch 0: 13.35 m since start, LR 1.32e-03
+    train_cost: 0.223, train_err: 6.917
+    val_cost: 0.066, val_err: 1.455, best: 1.455
+ 
+    epoch 1: 27.01 m since start, LR 1.25e-03
+    train_cost: 0.200, train_err: 6.531
+    val_cost: 0.060, val_err: 1.000, best: 1.000
+ 
+    epoch 2: 40.71 m since start, LR 1.19e-03
+    train_cost: 0.185, train_err: 5.854
+    val_cost: 0.069, val_err: 1.727, best: 1.000
+ 
+    epoch 3: 54.52 m since start, LR 1.13e-03
+    train_cost: 0.182, train_err: 5.635
+    val_cost: 0.065, val_err: 1.636, best: 1.000
+ 
+    epoch 4: 68.23 m since start, LR 1.08e-03
+    train_cost: 0.177, train_err: 5.667
+    val_cost: 0.067, val_err: 1.636, best: 1.000
+ 
+    epoch 5: 81.93 m since start, LR 1.02e-03
+    train_cost: 0.159, train_err: 5.083
+    val_cost: 0.069, val_err: 1.909, best: 1.000
+ 
+    epoch 6: 95.68 m since start, LR 9.71e-04
+    train_cost: 0.157, train_err: 5.010
+    val_cost: 0.067, val_err: 1.455, best: 1.000
+ 
+    epoch 7: 109.38 m since start, LR 9.22e-04
+    train_cost: 0.153, train_err: 5.094
+    val_cost: 0.071, val_err: 1.545, best: 1.000
+ 
+    epoch 8: 123.10 m since start, LR 8.76e-04
+    train_cost: 0.153, train_err: 4.937
+    val_cost: 0.067, val_err: 1.818, best: 1.000
+ 
+    epoch 9: 136.81 m since start, LR 8.32e-04
+    train_cost: 0.139, train_err: 4.406
+    val_cost: 0.069, val_err: 1.545, best: 1.000
+ 
+    epoch 10: 150.53 m since start, LR 7.91e-04
+    train_cost: 0.146, train_err: 4.573
+    val_cost: 0.070, val_err: 1.727, best: 1.000
+ 
+    epoch 11: 164.34 m since start, LR 7.51e-04
+    train_cost: 0.125, train_err: 3.937
+    val_cost: 0.071, val_err: 1.909, best: 1.000
+ 
+    epoch 12: 178.28 m since start, LR 7.13e-04
+    train_cost: 0.126, train_err: 3.906
+    val_cost: 0.068, val_err: 1.636, best: 1.000
+ 
+    epoch 13: 192.31 m since start, LR 6.78e-04
+    train_cost: 0.125, train_err: 4.271
+    val_cost: 0.070, val_err: 1.636, best: 1.000
+ 
+    epoch 14: 206.09 m since start, LR 6.44e-04
+    train_cost: 0.126, train_err: 4.052
+    val_cost: 0.071, val_err: 1.727, best: 1.000
+ 
+    epoch 15: 219.82 m since start, LR 6.12e-04
+    train_cost: 0.117, train_err: 3.656
+    val_cost: 0.069, val_err: 1.636, best: 1.000
+ 
+    epoch 16: 233.94 m since start, LR 5.81e-04
+    train_cost: 0.122, train_err: 3.740
+    val_cost: 0.070, val_err: 1.636, best: 1.000

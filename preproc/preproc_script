@@ -1,0 +1,108 @@
+#!/usr/bin/env python2
+
+import os
+from glob import glob
+from gzip import GzipFile
+from cPickle import dump, load
+from numpy import *
+
+cpython = "/home/lio/Canopy/env/User/bin/python"
+
+os.system(cpython+" preproc_new.py 2 0 & "
+     +cpython+" preproc_new.py 2 1 & ")
+
+# os.system(cpython+" preproc_new.py 4 0 & "
+#      +cpython+" preproc_new.py 4 1 & "
+#     +cpython+" preproc_new.py 4 2 & "
+#     +cpython+" preproc_new.py 4 3 & ")
+
+#os.system(cpython+" preproc_new.py 4 3")
+
+
+# v,t,o,j,l = [],[],[],[],[]
+# batch_idx=0
+
+# for path in files:
+#     file = GzipFile(path, 'rb')
+#     v_,s_,l_ = load(file)
+#     file.close()
+#     t_,o_,j_ = s_
+
+#     new_dat = v_,t_,o_,j_,l_
+
+#     for i,dat in enumerate([v,t,o,j,l]): 
+#         dat.extend(list(new_dat[i]))
+
+#     lenl = len(l)
+#     if lenl >=100:
+#         if lenl>100: v_,t_,o_,j_,l_ = v[100:],t[100:],o[100:],j[100:],l[100:]
+#         v,t,o,j,l = v[:100],t[:100],o[:100],j[:100],l[:100]
+#         os.chdir(dest)
+#         file_name = "batch_"+str(len(l))+"_5_"+str(batch_idx)+".zip"
+
+#         v,l = [array(i,dtype="uint8") for i in v,l]
+#         t,o,j = [array(list(i),dtype="uint8") for i in t,o,j]
+#         s = t,o,j
+
+#         file = GzipFile(file_name, 'wb')
+#         dump((v,s,l), file, -1)
+#         file.close()
+
+#             # dump((t,o,d,g,l), open(file_name,"wb"),-1)
+#         print file_name
+#         batch_idx += 1
+
+#         if lenl>100: v,t,o,j,l = v_,t_,o_,j_,l_ 
+#         else: v,t,o,j,l = [],[],[],[],[]
+
+
+
+
+
+
+
+
+
+# dest = "/media/lio/64EE5F7C8CC54BFB/chalearn2014/20lbl_32x240x240/train"
+# os.chdir(dest)
+# allfiles = glob("batch_*.zip")
+# files_100 = glob("batch_100_*.zip")
+
+# files = list(set(allfiles).difference(files_100))
+
+# print len(files)
+
+# files.sort(reverse=True)
+
+# v,l = [],[]
+# batch_idx=0
+
+# for path in files:
+#     file = GzipFile(path, 'rb')
+#     v_,l_ = load(file)
+#     file.close()
+
+#     new_dat = v_,l_
+
+#     for i,dat in enumerate([v,l]): 
+#         dat.extend(list(new_dat[i]))
+
+#     lenl = len(l)
+#     if lenl >=100:
+#         if lenl>100: v_,l_ = v[100:],l[100:]
+#         v,l = v[:100],l[:100]
+#         os.chdir(dest)
+#         file_name = "batch_"+str(len(l))+"_5_"+str(batch_idx)+".zip"
+
+#         v,l = [array(i,dtype="uint8") for i in v,l]
+
+#         file = GzipFile(file_name, 'wb')
+#         dump((v,l), file, -1)
+#         file.close()
+
+#             # dump((t,o,d,g,l), open(file_name,"wb"),-1)
+#         print file_name
+#         batch_idx += 1
+
+#         if lenl>100: v,l = v_,l_ 
+#         else: v,l = [],[]
